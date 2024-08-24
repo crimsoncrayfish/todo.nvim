@@ -1,7 +1,6 @@
 local M = {}
 
 M.setup = function()
-	print("setup todo")
 	-- TODO: get the todos from a file
 end
 
