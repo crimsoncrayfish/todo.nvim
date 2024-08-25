@@ -1,19 +1,29 @@
 local M = {}
 
+M.DB = {}
+
 M.setup = function()
-	-- TODO: get the todos from a file
+	M.DB = require("todo.todo_db")
+	M.DB.setup()
 end
 
-M.add = function()
-	-- TODO: function to add a task
+M.add = function(...)
+	M.DB.append(...)
 end
 
-M.delete = function()
-	-- TODO: function to delete a task
+M.delete = function(...)
+	M.DB.delete(...)
 end
 
-M.complete = function()
-	-- TODO: function to complete a task
+M.complete = function(...)
+	M.DB.complete(...)
+end
+
+M.read = function()
+	M.DB.print_state(false)
+end
+M.dbg = function()
+	M.DB.print_state(true)
 end
 
 M.update = function()
